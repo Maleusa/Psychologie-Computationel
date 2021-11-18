@@ -6,6 +6,7 @@ public class Rue {
 	 * @
 	 */
 	Croisement debut,fin;
+	
 	double longueur;
 	double poids;
 	
