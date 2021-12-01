@@ -49,6 +49,8 @@ public class Map {
 		
 	}
 	
+	
+	
 	public static void main(String[] args) throws IOException {
 		Map m = new Map();
 		System.out.println(m.arbre[52]);

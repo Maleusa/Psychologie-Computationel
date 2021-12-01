@@ -36,6 +36,23 @@ public class Croisement {
 		return false;
 	}
 	
+	public double getDistObj() {
+		return distObj;
+	}
+	
+	public double distVoisin(Croisement c) {
+		double dist = 0;
+		if(!this.estVoisin(c))
+			throw new IllegalArgumentException();
+		for(int i = 0; i<voisin.length;i++) {
+			if(c.getNom().equals(voisin[i])){
+				dist = distVoisin[i];
+			}
+		}
+		return dist;
+	}
+	
+	
 	public String toString() {
 		return nom +" "+ Arrays.toString(voisin)+" "+Arrays.toString(distVoisin)+" "+distObj;
 	}
