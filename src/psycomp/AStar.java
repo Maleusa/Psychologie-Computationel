@@ -33,9 +33,9 @@ public class AStar {
 	 * @return
 	 */
 	public double fonctionEvaluation(double distParcourue, Croisement c1, Croisement c2) {
-		if(!depart.estVoisin(arrive))
+		if(!c2.estVoisin(c1))
 			throw new IllegalArgumentException();
-		return distParcourue+depart.distVoisin(arrive)+arrive.getDistObj();
+		return distParcourue+c1.distVoisin(c2)+c2.getDistObj();
 	}
 
 }
