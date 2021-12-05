@@ -2,13 +2,13 @@ package psycomp;
 
 public class AStar {
 	/**
-	 * Carte sur laquelle l'algorithme A* sera déroulé 
+	 * Carte sur laquelle l'algorithme A* sera dï¿½roulï¿½ 
 	 */
 	Map m;
 	
 	/**
-	 * L'attribut départ représente le croisement à partir duquel le participant doit tracé son chemin
-	 * L'attribut arrivee représente le croisement que le participant doit atteindre avec son chemin
+	 * L'attribut dï¿½part reprï¿½sente le croisement ï¿½ partir duquel le participant doit tracï¿½ son chemin
+	 * L'attribut arrivee reprï¿½sente le croisement que le participant doit atteindre avec son chemin
 	 */
 	Croisement depart, arrivee;
 	
@@ -25,16 +25,16 @@ public class AStar {
 	}
 	
 	/**
-	 * methode permettant de calculer la fonction d'évalution représentant le coût total estimé pour aller vers l’´état final en partant de c1 
+	 * methode permettant de calculer la fonction d'ï¿½valution reprï¿½sentant le coï¿½t total estimï¿½ pour aller vers lï¿½ï¿½ï¿½tat final en partant de c1 
 	 *et en passant par c2 
-	 * @param distParcourue représente la distance déja parcourue avant le croisement c1
+	 * @param distParcourue reprï¿½sente la distance dï¿½ja parcourue avant le croisement c1
 	 * @param depart 
 	 * @param arrive
 	 * @return
 	 */
 	public double fonctionEvaluation(double distParcourue, Croisement c1, Croisement c2) {
 		if(!c2.estVoisin(c1))
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException();// ca risque pas d'etre bloquant si on fait le parcours en automatique?
 		return distParcourue+c1.distVoisin(c2)+c2.getDistObj();
 	}
 
