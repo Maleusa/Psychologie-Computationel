@@ -25,7 +25,7 @@ public class Main {
 		Croisement arrivee = m.getCroisement("47");
 		
 		//D�roulement de l'algorithme et stockage des noms des croisements emprunt� par le programme
-		AstarParametrique a = new AstarParametrique(m,depart,arrivee);
+		AStarParametrique a = new AStarParametrique(m,depart,arrivee);
 		ArrayList<Croisement> chemin =a.parcours();
 		BufferedWriter fichierChemin =new BufferedWriter(new FileWriter("chemin")); 
 		String s = "1";

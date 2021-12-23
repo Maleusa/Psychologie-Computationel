@@ -2,10 +2,10 @@ package psycomp;
 
 import java.util.ArrayList;
 
-public class AstarParametrique extends AStar {
+public class AStarParametrique extends AStar {
 
 	protected int step;
-	public AstarParametrique(Map m, Croisement depart, Croisement arrivee) {
+	public AStarParametrique(Map m, Croisement depart, Croisement arrivee) {
 		super(m, depart, arrivee);
 		// TODO Auto-generated constructor stub
 		int step=0;
