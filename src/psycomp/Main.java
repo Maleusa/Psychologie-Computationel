@@ -12,20 +12,20 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		//Lecture du fichier contenants les informations necessaires à la construction de l'entièreté des croisements contenus dans la carte
+		//Lecture du fichier contenants les informations necessaires ï¿½ la construction de l'entiï¿½retï¿½ des croisements contenus dans la carte
 		Reader r = new FileReader("D:\\Users\\psychologie computationel\\Psychologie-Computationel\\src\\psycomp\\croisements.txt");
 		BufferedReader data = new BufferedReader(r);
-		//Création de la carte sur laquelle A* sera déroulé
+		//Crï¿½ation de la carte sur laquelle A* sera dï¿½roulï¿½
 		Map m = new Map(data);
 		
-		//Définition du croisement de départ du trajet
+		//Dï¿½finition du croisement de dï¿½part du trajet
 		Croisement depart = m.getCroisement("1");
 		
-		//Définition du croisement d'arrivée du trajet 
+		//Dï¿½finition du croisement d'arrivï¿½e du trajet 
 		Croisement arrivee = m.getCroisement("47");
 		
-		//Déroulement de l'algorithme et stockage des noms des croisements emprunté par le programme
-		AStar a = new AStar(m,depart,arrivee);
+		//Dï¿½roulement de l'algorithme et stockage des noms des croisements empruntï¿½ par le programme
+		AstarParametrique a = new AstarParametrique(m,depart,arrivee);
 		ArrayList<Croisement> chemin =a.parcours();
 		BufferedWriter fichierChemin =new BufferedWriter(new FileWriter("chemin")); 
 		String s = "1";
