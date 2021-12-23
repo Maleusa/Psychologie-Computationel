@@ -2,6 +2,7 @@ package psycomp;
 
 public class Rue {
 	/**Classe Rue representant une distance entre deux intersections
+	 * @deprecated
 	 * @author Y.Cheriti et C.Conrad
 	 * @
 	 */

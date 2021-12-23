@@ -1,20 +1,19 @@
 package psycomp;
 import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
-import java.util.ArrayList;
+
 
 public class Map {
+	/**
+	 * attribut contenant l'ensemble des croisements contenus dans la carte 
+	 */
 	Croisement[] arbre;
 	
-	public Map() throws IOException {
-		
-		Reader r = new FileReader("D:\\Users\\psychologie computationel\\Psychologie-Computationel\\src\\psycomp\\croisements.txt");
-		BufferedReader data = new BufferedReader(r);
+	/**
+	 * Permet de construire l'attribut arbre à partir d'un fichier contenant les différentes informations neccesaires à la création de tous les croisements de la carte
+	 * @throws IOException
+	 */
+	public Map(BufferedReader data) throws IOException {
 		String ligne = null;
 		int k = 0;
 		Croisement[] arbre = new Croisement[53];
@@ -49,12 +48,25 @@ public class Map {
 		
 	}
 	
-	
-	
-	public static void main(String[] args) throws IOException {
-		Map m = new Map();
-		System.out.println(m.arbre[52]);
+	/**
+	 * 
+	 * @param s
+	 * @return Le croisement de la carte ayant le nom s 
+	 */
+	public Croisement getCroisement(String s) {
+		Croisement c = null;
+		for(int i = 0; i<arbre.length;i++) {
+			if(arbre[i].getNom().equals(s)) {
+				c = arbre[i];
+				break;
+			}
+		}
+		if(c==null)
+			throw new IllegalArgumentException();
+		return c;
 	}
+	
+
 	
 
 }
