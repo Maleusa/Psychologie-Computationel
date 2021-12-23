@@ -16,7 +16,7 @@ public class AStarParametrique extends AStar {
 	 * de l'erreur d'estimation des humains sur le papiers Thorndyke, P. W. (1981). Distance estimation from cognitive maps. Cognitive Psychology, 13(4), 526‑550. https://doi.org/10.1016/0010-0285(81)90019-0
 	 */
 	public double fonctionEvaluation(double distParcourue, Croisement c1, Croisement c2) {
-		distParcourue=distParcourue*k1+k2*step;
+		distParcourue=distParcourue*k1+(k2+(Math.random() * ((1.84 + 1.84 ) + 1)) - 1.84)*step;
 		if(!c2.estVoisin(c1))
 			throw new IllegalArgumentException();// ca risque pas d'etre bloquant si on fait le parcours en automatique?
 		return distParcourue+c1.distVoisin(c2)+c2.getDistObj();
