@@ -21,6 +21,8 @@ public class AStarParametrique extends AStar {
 			throw new IllegalArgumentException();// ca risque pas d'etre bloquant si on fait le parcours en automatique?
 		return distParcourue+c1.distVoisin(c2)+c2.getDistObj();
 	}
+	
+	
 	public ArrayList<Croisement> parcours(){
 		System.out.println("depart = "+ depart);
 		if(depart.estVoisin(arrivee)) {
