@@ -49,8 +49,9 @@ public class estimAStarParam extends AStarParametrique{
 					lResu.add(i,0.0);
 				}
 			}
-			return lResu;
+			
 		}
+		return lResu;
 	}
 	
 	
