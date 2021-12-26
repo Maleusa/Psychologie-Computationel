@@ -9,6 +9,8 @@ import java.io.Reader;
 import java.util.ArrayList;
 
 
+
+
 public class Main {
 
 	public static void main(String[] args) throws IOException {
@@ -24,8 +26,12 @@ public class Main {
 		//Dï¿½finition du croisement d'arrivï¿½e du trajet 
 		Croisement arrivee = m.getCroisement("47");
 		
+		/////////////////////
+		//A* 
+		////////////////////
+
 		//Dï¿½roulement de l'algorithme et stockage des noms des croisements empruntï¿½ par le programme
-		AStarParametrique a = new AStarParametrique(m,depart,arrivee);
+		AStar a = new AStar(m,depart,arrivee);
 		ArrayList<Croisement> chemin =a.parcours();
 		BufferedWriter fichierChemin =new BufferedWriter(new FileWriter("chemin")); 
 		String s = "1";
@@ -34,6 +40,30 @@ public class Main {
 		}
 		fichierChemin.write(s);
 		fichierChemin.close();
+		
+		//////////////////////
+		//A* paramétrique
+		/////////////////////
+		
+		//Dï¿½roulement de l'algorithme et stockage des noms des croisements empruntï¿½ par le programme
+		BufferedWriter fichierCheminParam = new BufferedWriter(new FileWriter("cheminParam")); 
+		
+		for(int k = 0; k<100; k++) {
+			AStarParametrique a2 = new AStarParametrique(m,depart,arrivee);
+			ArrayList cheminParam =  a2.parcours();
+			String s2 = "1";
+			for(int i = 0; i<cheminParam.size();i++) {
+				System.out.println(cheminParam.size());
+				s2 = s2 + " " +((Croisement) cheminParam.get(i)).getNom();
+			}
+			fichierCheminParam.write(s2+'\n');
+		}
+		
+		AStarParametrique a2 = new AStarParametrique(m,depart,arrivee);
+		a2.parcours();
+		
+		fichierCheminParam.close();
+		
 		
 	}
 

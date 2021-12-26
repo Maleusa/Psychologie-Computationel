@@ -63,7 +63,7 @@ public class AStar {
 	 * @return une liste de croisement représentant le chemin emptunté par l'algorithme 
 	 */
 	public ArrayList<Croisement> parcours(){
-		System.out.println("depart = "+ depart);
+	
 		if(depart.estVoisin(arrivee)) {
 			chemin.add(arrivee);
 			return chemin;
