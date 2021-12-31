@@ -12,8 +12,9 @@ public class AStar {
 	/**
 	 * represente le croisement à partir duquel le participant doit tracé son chemin
 	 */
-	Croisement depart;
+	Croisement etape;
 	
+	Croisement depart;
 	/**
 	 *represente le croisement que le participant doit atteindre avec son chemin
 	 */
@@ -37,6 +38,7 @@ public class AStar {
 	public AStar(Map m, Croisement depart, Croisement arrivee) {
 		this.m = m;
 		this.depart = depart;
+		etape = depart;
 		this.arrivee = arrivee;
 		distParcourue = 0;
 		chemin = new ArrayList<Croisement>();
@@ -63,18 +65,18 @@ public class AStar {
 	 * @return une liste de croisement représentant le chemin emptunté par l'algorithme 
 	 */
 	public ArrayList<Croisement> parcours(){
-	
-		if(depart.estVoisin(arrivee)) {
+		
+		if(etape.estVoisin(arrivee)) {
 			chemin.add(arrivee);
 			return chemin;
 		}
-		String[] s = depart.getVoisin();
+		String[] s = etape.getVoisin();
 		double minFonctionEval = 1000000;
 		double fonctionEval;
 		int indexMin=0;
 		for(int i = 0; i<s.length;i++) {
 			Croisement c = m.getCroisement(s[i]);
-			fonctionEval = fonctionEvaluation(distParcourue,depart,c);
+			fonctionEval = fonctionEvaluation(distParcourue,etape,c);
 			if(!chemin.contains(c)) {
 			if(minFonctionEval>fonctionEval) {
 				minFonctionEval = fonctionEval;
@@ -83,8 +85,9 @@ public class AStar {
 			}
 		}
 		Croisement etape =  m.getCroisement(s[indexMin]);
-		distParcourue += etape.distVoisin(depart);
-		this.depart = etape;
+		distParcourue += etape.distVoisin(this.etape);
+		this.etape = etape;
+		
 		chemin.add(etape);
 		return parcours();
 	}
