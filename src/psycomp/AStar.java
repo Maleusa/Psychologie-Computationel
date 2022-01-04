@@ -5,27 +5,29 @@ import java.util.ArrayList;
 
 public class AStar {
 	/**
-	 * Carte sur laquelle l'algorithme A* sera dï¿½roulï¿½ 
+	 * Carte sur laquelle l'algorithme A* sera déroulé
 	 */
 	Map m;
 	
 	/**
-	 * represente le croisement à partir duquel le participant doit tracé son chemin
+	 * représente l'étape à laquelle est l'algorithme
 	 */
 	Croisement etape;
-	
+	/**
+	 * représente le croisement à partir duquel le participant doit tracer son chemin
+	 */
 	Croisement depart;
 	/**
-	 *represente le croisement que le participant doit atteindre avec son chemin
+	 *représente le croisement que le participant doit atteindre avec son chemin
 	 */
 	Croisement arrivee;
 	
 	/**
-	 * represente le chemin emprunté par le porgramme 
+	 * représente le chemin emprunté par le programme 
 	 */
 	ArrayList<Croisement> chemin;
 	/**
-	 * L'attribut distParcourue represente la distance effective parcourue par le programme à chaque étape de l'algorithme
+	 * L'attribut distParcourue représente la distance effective parcourue par le programme à chaque étape de l'algorithme
 	 */
 	double distParcourue;
 	
@@ -47,7 +49,7 @@ public class AStar {
 	
 	
 	/**
-	 * Méthode permettant de calculer la fonction d'évalution représentant le coût total estimé pour aller vers l’´état final en partant de c1 
+	 * Méthode permettant de calculer la fonction d'évaluation représentant le coût total estimé pour aller vers l’état final en partant de c1 
 	 * et en passant par c2 
 	 * @param distParcourue représente la distance déja parcourue avant le croisement c1
 	 * @param depart 

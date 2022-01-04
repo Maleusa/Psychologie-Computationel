@@ -3,7 +3,7 @@ package psycomp;
 import java.util.Arrays;
 
 /**
- * Classe croisement représentant l'intersection de plusieurs rues, un croisement est représenté par une lettre et un nombre
+ * Classe croisement représentant l'intersection de plusieurs rues
  * @author Y.Cheriti et C.Conrad
  *
  */
@@ -13,12 +13,12 @@ public class Croisement {
 	 */
 	String nom;
 	/**
-	 * Tableau contenant l'ensemble des noms des croisements voisin à this.
+	 * Tableau contenant l'ensemble des noms des croisements voisins à this.
 	 */
 	String[] voisin;
 	/**
 	 * Tableau contenant les disances de this à ses voisins.
-	 * La distance stocké à l'indice i dans distVoisin est la distance séparant this au croisement stocké à l'indice i dans voisin
+	 * La distance stockée à l'indice i dans distVoisin est la distance séparant this au croisement stocké à l'indice i dans voisin
 	 */
 	double[] distVoisin;
 	/**
@@ -27,7 +27,7 @@ public class Croisement {
 	double distObj;
 	
 	/**
-	 * Constructeur permettant d'initialisé l'ensemble des attributs d'un croisement
+	 * Constructeur permettant d'initialiser l'ensemble des attributs d'un croisement
 	 * @param nom
 	 * @param voisin
 	 * @param distVoisin
@@ -59,7 +59,7 @@ public class Croisement {
 	/**
 	 * redéfinition de la méthode equals 
 	 * @param c le croisement que l'on veut comprarer à this
-	 * @return true si c à le même nom de this et false sinon.
+	 * @return true si c a le même nom que this et false sinon.
 	 */
 	public boolean equals(Croisement c) {
 		return (this.nom.equals(c.nom));

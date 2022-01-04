@@ -42,7 +42,7 @@ public class Main {
 		//A* 
 		////////////////////
 
-		//Dï¿½roulement de l'algorithme et stockage des noms des croisements empruntï¿½ par le programme
+		//Déroulement de l'algorithme et stockage des noms des croisements emprunté par le programme dans un fichier 
 		AStar a = new AStar(m,depart,arrivee);
 		ArrayList<Croisement> chemin =a.parcours();
 		BufferedWriter fichierChemin =new BufferedWriter(new FileWriter("chemin")); 
@@ -57,7 +57,7 @@ public class Main {
 		//A* paramétrique
 		/////////////////////
 
-		//Dï¿½roulement de l'algorithme et stockage des noms des croisements empruntï¿½ par le programme
+		//Déroulement de l'algorithme et stockage des noms des croisements emprunté par le programme dans un fichier
 		BufferedWriter fichierCheminParam = new BufferedWriter(new FileWriter("cheminParam")); 
 
 		for(int k = 0; k<100; k++) {

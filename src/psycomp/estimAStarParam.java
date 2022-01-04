@@ -31,7 +31,7 @@ public class estimAStarParam extends AStarParametrique{
 	}
 	
 	/**
-	 * Permet d'obtenir une liste contenant les données expérimentaux récoltés
+	 * Permet d'obtenir une liste contenant les données expérimentales récoltées
 	 * @param NomFichier fichier contenant les données récoltés
 	 * @return Une ArrayList contenant les données la probabilité de passage pour chaque croisement 
 	 * @throws IOException
@@ -49,8 +49,8 @@ public class estimAStarParam extends AStarParametrique{
 	}
 	
 	/**
-	 * Permet de générer une liste contenant les données simulé par le programme
-	 * @param l Résultats généré par le programme 
+	 * Permet de générer une liste contenant les données simulées par le programme
+	 * @param l Résultats générés par le programme 
 	 * @return Une ArrayList contenant la probabilité de passage pour chaque croisement 
 	 */
 	
@@ -71,18 +71,14 @@ public class estimAStarParam extends AStarParametrique{
 			if(b==false) {
 				lResu.add(i-1,0.0);
 			}
-<<<<<<< Updated upstream
-			
-=======
-		
->>>>>>> Stashed changes
+
 		}
 		return lResu;
 	}
 	
 	
 	/**
-	 * Modifie la distance parcourue avec une reprÃ©sentation de la distance parcourue obtenue Ã  partir de l'Ã©valuation parametrique 
+	 * Modifie la distance parcourue avec une représentation de la distance parcourue obtenue Ã  partir de l'évaluation paramétrique 
 	 * de l'erreur d'estimation des humains sur le papiers Thorndyke, P. W. (1981). Distance estimation from cognitive maps. Cognitive Psychology, 13(4), 526â€‘550. https://doi.org/10.1016/0010-0285(81)90019-0
 	 */
 	public double fonctionEvaluation(double distParcourue, Croisement c1, Croisement c2, double k2, double ecartType) {
@@ -128,6 +124,17 @@ public class estimAStarParam extends AStarParametrique{
 		return parcours();
 	}
 	
+	/**
+	 * Méthode réalisant l'estimation paramétrique pour k2 et ET
+	 * @param borneInfK2 borne inférieur de l'intervalle de recherche pour k2
+	 * @param borneSupK2 borne supérieure de l'intervalle de recherche pour k2
+	 * @param pasK2 pas de parcours de l'intervalle de recherche pour k2
+	 * @param borneInfET borne inférieure de l'intervalle de recherche pour ET
+	 * @param borneSupET borne supérieure de l'intervalle de recherche pour ET
+	 * @param pasET pas de parcours de l'intervalle de recherche pour ET
+	 * @return un tableau contenant les valeures estimées pour k2 et pour ET
+	 * @throws IOException
+	 */
 
 	public double[] estimParam(double borneInfK2,double borneSupK2, double pasK2,double borneInfET,double borneSupET, double pasET) throws IOException {
 		ArrayList t1 = dataExpe("D:\\Users\\psychologie computationel\\Psychologie-Computationel\\src\\psycomp\\dataExpe.txt");
