@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AStarParametrique extends AStar {
+	//test
 	
 	/**
 	 * Attribut représentant le nombre d'étape déjà réalisée pas l'algorithme
